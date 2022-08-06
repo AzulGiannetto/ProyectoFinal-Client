@@ -20,7 +20,7 @@ const Footer = () => {
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">Copyright 2022</Typography>
+          <Typography align="center" variant="body1">Copyright 2022</Typography>
         </Container>
       </Box>
     </Box>
