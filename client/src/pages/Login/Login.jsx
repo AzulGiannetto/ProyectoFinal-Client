@@ -1,6 +1,7 @@
 import * as React from "react";
-import { TextField, Grid, Typography, Button, Stack } from "@mui/material";
+import { TextField, Grid, Typography} from "@mui/material";
 import Footer from "../../components/Footer/Footer"
+import ButtonsLogin from "../../components/ButtonsLogin/ButtonsLogin";
 
 const Login = () => {
   return (
@@ -51,20 +52,7 @@ const Login = () => {
             }}
           />
         </Grid>
-        <Stack spacing={2}>
-          <Button style={{ backgroundColor: "#0fb66e", color: "#000000" }}>
-            Sign In
-          </Button>
-          <Button
-            style={{
-              width: "150px",
-              backgroundColor: "#02a663",
-              color: "#000000",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
+          <ButtonsLogin/>
       </Grid>
       <Footer/>
     </div>

@@ -1,13 +1,5 @@
 import * as React from "react";
-import {
-  TextField,
-  Grid,
-  Typography,
-  ButtonGroup,
-  Button,
-  Stack,
-  Box,
-} from "@mui/material";
+import { TextField, Grid, Typography, Button, Stack, Box } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
 
 const Register = () => {
@@ -90,7 +82,7 @@ const Register = () => {
             <Grid item xs={8}>
               <TextField
                 id="filled-basic"
-                label="Email"
+                label="Password"
                 variant="filled"
                 fullWidth
                 style={{ marginBottom: "2em" }}
@@ -105,6 +97,19 @@ const Register = () => {
                 }}
               />
             </Grid>
+          </Grid>
+          <Grid>
+            <Stack spacing={2} alignItems="center">
+              <Button
+                style={{
+                  backgroundColor: "#0fb66e",
+                  color: "#000000",
+                  width: "150px",
+                }}
+              >
+                Sign In
+              </Button>
+            </Stack>
           </Grid>
         </Box>
       </Grid>
