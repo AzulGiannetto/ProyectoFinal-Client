@@ -1,7 +1,6 @@
 import * as React from "react";
 import { TextField, Grid, Typography, Stack, Button } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
-import ButtonsLogin from "../../components/ButtonsLogin/ButtonsLogin";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
