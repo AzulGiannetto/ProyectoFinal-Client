@@ -7,6 +7,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Homepage from "./pages/Homepage/Homepage";
 import Main from './pages/main/Main'
+import Feed from "./pages/Feed/Feed";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path="register" element={<Register />} />
       <Route path="homepage" element={<Homepage />} />
       <Route path="main" element={<Main />} />
+      <Route path="feed" element={<Feed />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
