@@ -1,26 +1,24 @@
 import * as React from "react";
-import { TextField, Grid, Typography} from "@mui/material";
-import Footer from "../../components/Footer/Footer"
-import ButtonsLogin from "../../components/ButtonsLogin/ButtonsLogin";
+import { TextField, Grid, Typography, Stack, Button } from "@mui/material";
+import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState(false)
-  const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleEmail = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
   const handlePassword = (e) => {
-    setPassword(e.target.value)
-  }
-  const handleClick =  async (e) => {
-    e.preventDefault()
-  }
+    setPassword(e.target.value);
+  };
+  const handleClick = async (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <Grid
@@ -40,7 +38,8 @@ const Login = () => {
             label="Email"
             variant="filled"
             fullWidth
-            onChange = {handleEmail}
+            value={email}
+            onChange={handleEmail}
             style={{ marginBottom: "2em" }}
             sx={{
               input: {
@@ -58,8 +57,9 @@ const Login = () => {
             fullWidth
             id="outlined-basic"
             variant="filled"
+            value={password}
             style={{ marginBottom: "2em" }}
-            onChange= {handleClick}
+            onChange={handlePassword}
             sx={{
               input: {
                 backgroundColor: "#0C0C0C",
@@ -71,9 +71,22 @@ const Login = () => {
             }}
           />
         </Grid>
-          <ButtonsLogin/>
+        <Stack spacing={2}>
+          <Button style={{ backgroundColor: "#0fb66e", color: "#000000" }}>
+            Sign In
+          </Button>
+          <Button
+            style={{
+              width: "150px",
+              backgroundColor: "#02a663",
+              color: "#000000",
+            }}
+          >
+            Sign Up
+          </Button>
+        </Stack>
       </Grid>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
