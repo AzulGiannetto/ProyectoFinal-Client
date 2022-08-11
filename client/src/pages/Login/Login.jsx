@@ -38,6 +38,7 @@ const Login = () => {
             label="Email"
             variant="filled"
             fullWidth
+            value={email}
             onChange={handleEmail}
             style={{ marginBottom: "2em" }}
             sx={{
@@ -56,8 +57,9 @@ const Login = () => {
             fullWidth
             id="outlined-basic"
             variant="filled"
+            value={password}
             style={{ marginBottom: "2em" }}
-            onChange={handleClick}
+            onChange={handlePassword}
             sx={{
               input: {
                 backgroundColor: "#0C0C0C",
