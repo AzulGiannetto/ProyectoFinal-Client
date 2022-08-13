@@ -12,7 +12,6 @@ const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-
   const handleFirstname = (e) => {
     setFirstname(e.target.value);
   };
@@ -30,17 +29,17 @@ const Register = () => {
   const handleClickRegister = async (e) => {
     e.preventDefault();
     await axios
-      .post(`http://localhost:8080/auth/register`, 
-      {
+      .post(`http://localhost:8080/auth/register`, {
         firstname: firstname,
         username: username,
         email: email,
         password: password,
-      }
-      )
+      })
       .then((res) => {
+        if (res.statusText === "Created") {
           navigate("/main");
           setError(false);
+        }
         console.log(res);
       })
       .catch((err) => {

@@ -4,10 +4,12 @@ import Hero from "../../components/Hero/Hero";
 import { Typography } from "@mui/material";
 import styles from "./stylesHomepage";
 import ButtonHome from "../../components/ButtonHome/ButtonHome";
+import NavBar from "../../components/NavBar/NavBar"
 
 const Homepage = () => {
   return (
     <div>
+      <NavBar/>
       <Grid
         container
         spacing={5}
