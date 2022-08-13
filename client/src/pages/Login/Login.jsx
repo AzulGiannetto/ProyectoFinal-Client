@@ -26,7 +26,7 @@ const Login = () => {
       .then((res) => {
         if (res.data.status === "OK") {
           localStorage.setItem("Token", JSON.stringify(res.data.token));
-          localStorage.setItem("User", JSON.stringify(res.data.email));
+          localStorage.setItem("Email", JSON.stringify(res.data.email));
           navigate("/main");
           setError(false);
         }

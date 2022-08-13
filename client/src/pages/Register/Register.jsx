@@ -1,8 +1,53 @@
 import * as React from "react";
+import { useState } from "react";
 import { TextField, Grid, Typography, Button, Stack, Box } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const Register = () => {
+  const [firstname, setFirstname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+
+  const handleFirstname = (e) => {
+    setFirstname(e.target.value);
+  };
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleClickRegister = async (e) => {
+    e.preventDefault();
+    await axios
+      .post(`http://localhost:8080/auth/register`, 
+      {
+        firstname: firstname,
+        username: username,
+        email: email,
+        password: password,
+      }
+      )
+      .then((res) => {
+          navigate("/main");
+          setError(false);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      });
+  };
   return (
     <div>
       <Grid
@@ -27,8 +72,9 @@ const Register = () => {
           <Grid justifyContent="center" container spacing={2}>
             <Grid item xs={5}>
               <TextField
+                onChange={handleFirstname}
                 id="filled-basic"
-                label="Username"
+                label="FirstName"
                 variant="filled"
                 fullWidth
                 style={{ marginBottom: "2em" }}
@@ -45,8 +91,9 @@ const Register = () => {
             </Grid>
             <Grid item xs={3}>
               <TextField
+                onChange={handleUsername}
                 id="filled-basic"
-                label="Date"
+                label="username"
                 variant="filled"
                 fullWidth
                 style={{ marginBottom: "2em" }}
@@ -63,6 +110,7 @@ const Register = () => {
             </Grid>
             <Grid item xs={8}>
               <TextField
+                onChange={handleEmail}
                 id="filled-basic"
                 label="Email"
                 variant="filled"
@@ -81,6 +129,8 @@ const Register = () => {
             </Grid>
             <Grid item xs={8}>
               <TextField
+                type="password"
+                onChange={handlePassword}
                 id="filled-basic"
                 label="Password"
                 variant="filled"
@@ -101,6 +151,7 @@ const Register = () => {
           <Grid>
             <Stack spacing={2} alignItems="center">
               <Button
+                onClick={handleClickRegister}
                 style={{
                   backgroundColor: "#0fb66e",
                   color: "#000000",
