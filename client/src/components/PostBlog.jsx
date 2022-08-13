@@ -12,7 +12,7 @@ import {
 
 const Post = () => {
   return (
-    <Card sx={{ margin: 5 }}>
+    <Card sx={{ margin: 15}}>
       <CardHeader
         avatar={
           <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />

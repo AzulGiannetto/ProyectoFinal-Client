@@ -1,6 +1,6 @@
 import { Box, Stack, Skeleton } from "@mui/material";
 import React, { useState } from "react";
-import Post from "../../components/Post";
+import PostBlog from "../../components/PostBlog";
 import NavBar from '../../components/NavBar/NavBar'
 
 const Feed = () => {
@@ -11,8 +11,11 @@ const Feed = () => {
   }, [3000]);
 
   return (
+    
     <Box flex={4} p={{ xs: 0, md: 2 }}>
+
       <NavBar />
+      
       {loading ? (
         <Stack spacing={1}>
           <Skeleton variant="text" height={100} />
@@ -22,10 +25,10 @@ const Feed = () => {
         </Stack>
       ) : (
         <>
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          <PostBlog />
+          <PostBlog />
+          <PostBlog />
+          <PostBlog />
         </>
       )}
     </Box>

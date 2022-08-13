@@ -7,7 +7,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Homepage from "./pages/Homepage/Homepage";
 import Main from './pages/main/Main'
-import Feed from "./pages/Feed/Feed";
+import Blog from "./pages/Blog/Blog";
+import Post from "./pages/Post/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,7 +20,8 @@ root.render(
       <Route path="register" element={<Register />} />
       <Route path="homepage" element={<Homepage />} />
       <Route path="main" element={<Main />} />
-      <Route path="feed" element={<Feed />} />
+      <Route path="feed" element={<Blog />} />
+      <Route path="post" element={<Post />} />
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
