@@ -7,7 +7,7 @@ import Homepage from "./pages/Homepage/Homepage";
 import Main from "./pages/main/Main";
 import Blog from "./pages/Blog/Blog";
 import { useLocation } from "react-router-dom";
-import Post from "./pages/Post/Home";
+import PostMe from "./pages/Post/PostMe";
 import ProtectedRoute from "./routes/PrivateRoutes";
 import { useEffect, useState } from "react";
 
@@ -52,7 +52,7 @@ function App() {
           path="post"
           element={
             <ProtectedRoute email={email}>
-              <Post />
+              <PostMe />
             </ProtectedRoute>
           }
         />
