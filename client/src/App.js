@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 import PostMe from "./pages/Post/PostMe";
 import ProtectedRoute from "./routes/PrivateRoutes";
 import { useEffect, useState } from "react";
-
+import Profile from "./pages/Profile/Profile";
 function App() {
   const location = useLocation();
   const [email, setEmail] = useState(window.localStorage.getItem("Email"));
@@ -32,6 +32,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="homepage" element={<Homepage />} />
+        <Route path="profile" element={<Profile />} />
         <Route
           path="main"
           element={
