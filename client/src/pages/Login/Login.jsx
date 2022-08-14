@@ -3,7 +3,8 @@ import { TextField, Grid, Typography, Stack, Button } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import { EmailSharp } from "@mui/icons-material";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,9 +17,32 @@ const Login = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleClick = async (e) => {
+  const handleClickSingIn = async (e) => {
     e.preventDefault();
+    await axios
+      .post(`http://localhost:8080/auth/login`, {
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.data.status === "OK") {
+          localStorage.setItem("Token", JSON.stringify(res.data.token));
+          localStorage.setItem("Email", JSON.stringify(email));
+          navigate("/main");
+          setError(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      });
   };
+
+  const handleClickSignUp =(e) => {
+    e.preventDefault()
+    navigate("/register")
+  }
   return (
     <div>
       <Grid
@@ -53,7 +77,8 @@ const Login = () => {
           />
 
           <TextField
-            label="Password"
+            type="password"
+            label="password"
             fullWidth
             id="outlined-basic"
             variant="filled"
@@ -72,10 +97,14 @@ const Login = () => {
           />
         </Grid>
         <Stack spacing={2}>
-          <Button style={{ backgroundColor: "#0fb66e", color: "#000000" }}>
+          <Button
+            onClick={handleClickSingIn}
+            style={{ backgroundColor: "#0fb66e", color: "#000000" }}
+          >
             Sign In
           </Button>
           <Button
+            onClick={handleClickSignUp}
             style={{
               width: "150px",
               backgroundColor: "#02a663",
