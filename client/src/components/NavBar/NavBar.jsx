@@ -26,14 +26,12 @@ const pages = [
     name: "Posts",
     to: "/post",
   },
-  // {
-  //   name: 'Blog',
-  //   to: '/Blog'
-  // },
-  // {
-  //   name: 'Perfil',
-  //   to: '/'
-  // },
+  { name: "Feed", to: "/feed" },
+
+  {
+    name: "Post Me",
+    to: "/post",
+  },
 ];
 // const settings = ["Profile", "Logout"];
 
@@ -41,7 +39,7 @@ const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
   const [isLogged, setIsLogged] = React.useState(
     JSON.parse(window.localStorage.getItem("Token"))
   );
@@ -62,8 +60,8 @@ const ResponsiveAppBar = () => {
   };
 
   useEffect(() => {
-   setIsLogged(JSON.parse(window.localStorage.getItem("Token")))
-  }, [location])
+    setIsLogged(JSON.parse(window.localStorage.getItem("Token")));
+  }, [location]);
 
   const handleSession = () => {
     window.localStorage.removeItem("Token");
