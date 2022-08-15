@@ -26,9 +26,9 @@ const Feed = () => {
       ) : (
         <>
           <PostBlog />
+          {/* <PostBlog />
           <PostBlog />
-          <PostBlog />
-          <PostBlog />
+          <PostBlog /> */}
         </>
       )}
     </Box>

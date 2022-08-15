@@ -1,4 +1,4 @@
-import {  MoreVert, Share } from "@mui/icons-material";
+import { MoreVert, Share } from "@mui/icons-material";
 import {
   Avatar,
   Card,
@@ -9,10 +9,31 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Post = () => {
-  return (
-    <Card sx={{ margin: 15}}>
+  const [posting, setPosting] = useState([]);
+  const params = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/country/`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(
+            window.localStorage.getItem("Token")
+          )}`,
+        },
+      })
+      .then((res) => {
+        setPosting(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  return posting.map((poster) => (
+    <Card sx={{ margin: 15 }}>
       <CardHeader
         avatar={
           <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
@@ -22,18 +43,18 @@ const Post = () => {
             <MoreVert />
           </IconButton>
         }
-        title="John Doe"
+        title={poster.user}
         subheader="September 14, 2022"
       />
       <CardMedia
         component="img"
         height="20%"
-        image="https://images.pexels.com/photos/4534200/pexels-photo-4534200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        alt="Paella dish"
+        image={poster.imageUrl}
+        alt={poster.imageUrl}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Mi viaje a las bahamas 
+          {poster.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -42,7 +63,7 @@ const Post = () => {
         </IconButton>
       </CardActions>
     </Card>
-  );
+  ));
 };
 
 export default Post;

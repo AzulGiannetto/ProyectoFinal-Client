@@ -1,4 +1,4 @@
-import { Grid, Box, Paper } from "@mui/material";
+import { Grid } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import { Typography } from "@mui/material";
