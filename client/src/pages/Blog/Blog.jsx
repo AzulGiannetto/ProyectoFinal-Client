@@ -1,6 +1,6 @@
 import { Box, Stack, Skeleton } from "@mui/material";
 import React, { useState } from "react";
-import PostBlog from "../../components/PostBlog";
+import PostBlog from "../../components/PostBlog/PostBlog";
 import NavBar from '../../components/NavBar/NavBar'
 
 const Feed = () => {
@@ -24,12 +24,7 @@ const Feed = () => {
           <Skeleton variant="rectangular" height={250} />
         </Stack>
       ) : (
-        <>
           <PostBlog />
-          <PostBlog />
-          <PostBlog />
-          <PostBlog />
-        </>
       )}
     </Box>
   );

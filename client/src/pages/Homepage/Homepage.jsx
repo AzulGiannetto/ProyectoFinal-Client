@@ -1,4 +1,4 @@
-import { Grid, Box, Paper } from "@mui/material";
+import { Grid } from "@mui/material";
 import Footer from "../../components/Footer/Footer";
 import Hero from "../../components/Hero/Hero";
 import { Typography } from "@mui/material";
@@ -25,15 +25,12 @@ const Homepage = () => {
             Nuestra Misión
           </Typography>
           <Typography align="center" sx={styles.typographyText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in,
-            atque et veniam molestiae quaerat aliquid sed ipsam voluptas
-            explicabo cum. Dolorem, ad enim corporis eos tempore illo accusamus
-            eum ipsa qui repudiandae dolore nostrum doloremque magnam quos a
-            corrupti amet possimus! Veritatis in repudiandae quos quam fugiat
-            distinctio debitis maxime impedit soluta quis modi esse, est eius
-            ipsam inventore dicta. Tempora maxime deleniti ullam voluptatibus
-            unde corrupti incidunt recusandae accusantium quaerat enim aliquid
-            saepe placeat officia illum, laborum tempore?
+          ¡Muchas gracias por elegirnos! Esperamos que mediante nuestro servicio puedas imaginar tus 
+          nuevos viajes a de los paisajes que nuestros usuarios suben a nuestra red social. Consideramos 
+          que viajar no solo nos aporta los mejores momentos, sino que nos ayuda a conocernos a nosotros 
+          mismos y nuevas culturas, así como las maravillas de la naturaleza. 
+          Recorda que es de utilidad que no solo disfrutes los contenidos de otros usuarios, 
+          sino que subas los tuyos en los distintos paisajes para incentivar a los demás a conocer nuestro planeta. 
           </Typography>
         </Grid>
           <Grid item xs={3}>
