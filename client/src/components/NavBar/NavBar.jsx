@@ -43,6 +43,7 @@ const ResponsiveAppBar = () => {
   const [isLogged, setIsLogged] = React.useState(
     JSON.parse(window.localStorage.getItem("Token"))
   );
+  // const [profilePhoto, setProfilePhoto] = React.useState
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -68,6 +69,8 @@ const ResponsiveAppBar = () => {
     window.localStorage.removeItem("Email");
     navigate("/homepage");
   };
+
+
   return (
     <AppBar style={{ backgroundColor: "#aecfa4" }}>
       <Container maxWidth="lg">
@@ -151,7 +154,7 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src="" />
                 </IconButton>
               </Tooltip>
               <Menu
