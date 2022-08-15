@@ -28,8 +28,7 @@ const Register = () => {
   };
   const handleClickRegister = async (e) => {
     e.preventDefault();
-    await axios
-      .post(`http://localhost:8080/auth/register`, {
+    await axios.post(`http://localhost:8080/auth/register`, {
         firstname: firstname,
         username: username,
         email: email,
