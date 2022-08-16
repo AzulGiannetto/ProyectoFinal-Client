@@ -1,6 +1,7 @@
 # SoulGram
 ### Proyecto final para el curso Full Stack de Global Learning e IntegrarTEC.
 ![soulgram photo icon](https://user-images.githubusercontent.com/104934886/184945832-64943086-f642-47bc-8e49-108a03685a03.jpg)
+
 En nuestra página los usuarios tienen acceso a múltiples funcionalidades relacionadas con el turismo, en búsqueda de fomentar los viajes y dar a conocer los paisajes de nuestro planeta. 
 
 Algunas de las funcionalidades que los usuarios pueden encontrar en nuestra página son: 
