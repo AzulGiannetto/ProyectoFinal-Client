@@ -13,39 +13,45 @@ import {
 import { useState } from "react";
 
 export default function Share() {
-  const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [post, setPost] = useState("")
+  const [description, setDescription] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [post, setPost] = useState([]);
+  const [user, setUser] = useState("");
 
   const handleDescription = (e) => {
-    e.preventDefault();
+    setDescription(e.preventDefault());
   };
 
   const handleImageUrl = (e) => {
-    e.preventDefault();
+    setImageUrl(e.preventDefault());
   };
 
+  const dataPost = {
+    imageUrl: imageUrl,
+    description: description,
+    user: user,
+  };
   const handleClickPost = async (e) => {
     e.preventDefault();
-    await axios.post(
-      `http://localhost:8080/api/country/`,
-      {
-        description: description,
-        imageUrl: imageUrl,
-      },
-      {
+    await axios
+      .post(`http://localhost:8080/api/country/`, dataPost, {
         headers: {
           Authorization: `Bearer ${JSON.parse(
             window.localStorage.getItem("Token")
           )}`,
         },
-      }
-    ).then((res) =>{
-      if (res.statusText === "Created")
-      console.log(res.data)
-      setDescription(description)
-      setImageUrl(imageUrl)
-    }).catch((err) => console.log(err));
+      })
+      .then((res) => {
+        const userPost = setUser(
+          JSON.parse(window.localStorage.getItem("User"))
+        );
+
+        if (user === userPost) {
+          setPost(res.data);
+        }
+        console.log(res.data);
+      })
+      .catch((e) => console.log(e));
   };
 
   return (
@@ -102,7 +108,10 @@ export default function Share() {
           />
         </Grid>
         <Stack spacing={2}>
-          <Button onClick={handleClickPost} style={{ backgroundColor: "#0fb66e", color: "#000000" }}>
+          <Button
+            onClick={handleClickPost}
+            style={{ backgroundColor: "#0fb66e", color: "#000000" }}
+          >
             Share Post
           </Button>
         </Stack>

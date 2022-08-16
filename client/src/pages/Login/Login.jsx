@@ -6,14 +6,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import { EmailSharp } from "@mui/icons-material";
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const [user, setUser] = useState("");
   const navigate = useNavigate();
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
+  const handleUsername = (e) => {
+    setUser(e.target.value);
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -22,14 +21,14 @@ const Login = () => {
     e.preventDefault();
     await axios
       .post(`http://localhost:8080/auth/login`, {
-        email: email,
+        username: user,
         password: password,
       })
       .then((res) => {
         console.log(res);
         if (res.data.status === "OK") {
           localStorage.setItem("Token", JSON.stringify(res.data.token));
-          localStorage.setItem("Email", JSON.stringify(email));
+          localStorage.setItem("User", JSON.stringify(user));
           navigate("/main");
           setError(false);
         }
@@ -60,11 +59,11 @@ const Login = () => {
         <Grid item xs={3}>
           <TextField
             id="filled-basic"
-            label="Email"
+            label="user"
             variant="filled"
             fullWidth
-            value={email}
-            onChange={handleEmail}
+            value={user}
+            onChange={handleUsername}
             style={{ marginBottom: "2em" }}
             sx={{
               input: {
