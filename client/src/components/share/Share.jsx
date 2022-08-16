@@ -13,27 +13,28 @@ import {
 import { useState } from "react";
 
 export default function Share() {
-  const [description, setDescription] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  const [description, setDescription] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [post, setPost] = useState([]);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(window.localStorage.getItem("User"));
 
   const handleDescription = (e) => {
-    setDescription(e.preventDefault());
+    setDescription(e.target.value);
   };
 
   const handleImageUrl = (e) => {
-    setImageUrl(e.preventDefault());
+    setImageUrl(e.target.value);
   };
 
-  const dataPost = {
-    imageUrl: imageUrl,
-    description: description,
-    user: user,
-  };
-  const handleClickPost = async (e) => {
+
+  const handleClickPost = (e) => {
     e.preventDefault();
-    await axios
+    const dataPost = {
+      imageUrl: imageUrl,
+      description: description,
+      user: user,
+    };
+    axios
       .post(`http://localhost:8080/api/country/`, dataPost, {
         headers: {
           Authorization: `Bearer ${JSON.parse(
@@ -42,13 +43,7 @@ export default function Share() {
         },
       })
       .then((res) => {
-        const userPost = setUser(
-          JSON.parse(window.localStorage.getItem("User"))
-        );
-
-        if (user === userPost) {
-          setPost(res.data);
-        }
+        alert("ya subio el post")
         console.log(res.data);
       })
       .catch((e) => console.log(e));

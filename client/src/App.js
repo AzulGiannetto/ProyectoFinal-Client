@@ -35,14 +35,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/homepage" element={<Homepage />} />
         {/* <Route path="profile" element={<Profile />} /> */}
-        <Route
+        {/* <Route
           path="/main"
           element={
             <ProtectedRoute isLogged={isLogged}>
               <Main />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route
           path="/feed"
           element={
