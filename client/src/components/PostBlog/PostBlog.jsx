@@ -32,7 +32,7 @@ const Post = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  return posting.map((poster) => (
+  return posting.slice(0).reverse().map((poster) => (
     <Card sx={{ margin: 15 }}>
       <CardHeader
         avatar={
