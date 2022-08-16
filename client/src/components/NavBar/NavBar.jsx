@@ -22,10 +22,7 @@ const pages = [
     name: "Home",
     to: "/",
   },
-  {
-    name: "Posts",
-    to: "/post",
-  },
+
   { name: "Feed", to: "/feed" },
 
   {
@@ -69,7 +66,6 @@ const ResponsiveAppBar = () => {
     window.localStorage.removeItem("Email");
     navigate("/homepage");
   };
-
 
   return (
     <AppBar style={{ backgroundColor: "#aecfa4" }}>

@@ -9,6 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
 
   const handleEmail = (e) => {
@@ -39,10 +40,10 @@ const Login = () => {
       });
   };
 
-  const handleClickSignUp =(e) => {
-    e.preventDefault()
-    navigate("/register")
-  }
+  const handleClickSignUp = (e) => {
+    e.preventDefault();
+    navigate("/register");
+  };
   return (
     <div>
       <Grid
