@@ -5,7 +5,7 @@ export default function PostMe() {
   return (
     <>
       <NavBar />
-      <div className="homeContainer">
+      <div className="home Container">
         <Feed />
       </div>
     </>

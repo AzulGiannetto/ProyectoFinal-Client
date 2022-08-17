@@ -6,13 +6,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import { EmailSharp } from "@mui/icons-material";
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePhoto, setProfilePhoto] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
+  const handleUsername = (e) => {
+    setUser(e.target.value);
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -21,15 +22,16 @@ const Login = () => {
     e.preventDefault();
     await axios
       .post(`http://localhost:8080/auth/login`, {
-        email: email,
+        username: user,
         password: password,
       })
       .then((res) => {
         console.log(res);
         if (res.data.status === "OK") {
           localStorage.setItem("Token", JSON.stringify(res.data.token));
-          localStorage.setItem("Email", JSON.stringify(email));
-          navigate("/main");
+          localStorage.setItem("User", JSON.stringify(user));
+          localStorage.setItem("Id", JSON.stringify(res.data.id));
+          navigate("/");
           setError(false);
         }
       })
@@ -39,10 +41,10 @@ const Login = () => {
       });
   };
 
-  const handleClickSignUp =(e) => {
-    e.preventDefault()
-    navigate("/register")
-  }
+  const handleClickSignUp = (e) => {
+    e.preventDefault();
+    navigate("/register");
+  };
   return (
     <div>
       <Grid
@@ -53,25 +55,25 @@ const Login = () => {
         justifyContent="center"
         style={{ minHeight: "97.5vh" }}
       >
-        <Typography align="center" variant="h3" sx={{ color: "#02a663" }}>
+        <Typography align="center" variant="h3" sx={{ color: "#00ACC1" }}>
           Login
         </Typography>
         <Grid item xs={3}>
           <TextField
             id="filled-basic"
-            label="Email"
+            label="user"
             variant="filled"
             fullWidth
-            value={email}
-            onChange={handleEmail}
+            value={user}
+            onChange={handleUsername}
             style={{ marginBottom: "2em" }}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#00ACC1",
               },
               label: {
-                color: "#02a663",
+                color: "#00ACC1",
               },
             }}
           />
@@ -87,11 +89,11 @@ const Login = () => {
             onChange={handlePassword}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#00ACC1",
               },
               label: {
-                color: "#02a663",
+                color: "#00ACC1",
               },
             }}
           />
@@ -99,7 +101,7 @@ const Login = () => {
         <Stack spacing={2}>
           <Button
             onClick={handleClickSingIn}
-            style={{ backgroundColor: "#0fb66e", color: "#000000" }}
+            style={{ backgroundColor: "#006064", color: "#ffffff" }}
           >
             Sign In
           </Button>
@@ -107,15 +109,14 @@ const Login = () => {
             onClick={handleClickSignUp}
             style={{
               width: "150px",
-              backgroundColor: "#02a663",
-              color: "#000000",
+              backgroundColor: "#004D40",
+              color: "#ffffff",
             }}
           >
             Sign Up
           </Button>
         </Stack>
       </Grid>
-      <Footer />
     </div>
   );
 };

@@ -11,12 +11,15 @@ import PostMe from "./pages/Post/PostMe";
 import ProtectedRoute from "./routes/PrivateRoutes";
 import { useEffect, useState } from "react";
 import Profile from "./pages/Profile/Profile";
+import MyPost from "./pages/MyPost/MyPost";
 function App() {
   const location = useLocation();
-  const [email, setEmail] = useState(window.localStorage.getItem("Email"));
+  const [isLogged, setIsLogged] = useState(
+    window.localStorage.getItem("Token")
+  );
 
   useEffect(() => {
-    setEmail(window.localStorage.getItem("Email"));
+    setIsLogged(window.localStorage.getItem("Token"));
   }, [location]);
   return (
     <div className="App">
@@ -24,36 +27,60 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectedRoute email={email}>
+            <ProtectedRoute isLogged={isLogged}>
               <Main />
             </ProtectedRoute>
           }
         />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="homepage" element={<Homepage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/homepage" element={<Homepage />} />
         {/* <Route path="profile" element={<Profile />} /> */}
-        <Route
-          path="main"
+        {/* <Route
+          path="/main"
           element={
-            <ProtectedRoute email={email}>
+            <ProtectedRoute isLogged={isLogged}>
               <Main />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route
-          path="feed"
+          path="/feed"
           element={
-            <ProtectedRoute email={email}>
+            <ProtectedRoute isLogged={isLogged}>
               <Blog />
             </ProtectedRoute>
           }
         />
         <Route
-          path="post"
+          path="/post"
           element={
-            <ProtectedRoute email={email}>
+            <ProtectedRoute isLogged={isLogged}>
               <PostMe />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mypost"
+          element={
+            <ProtectedRoute isLogged={isLogged}>
+              <MyPost />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mypost"
+          element={
+            <ProtectedRoute isLogged={isLogged}>
+              <MyPost />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute isLogged={isLogged}>
+              <Profile />
             </ProtectedRoute>
           }
         />

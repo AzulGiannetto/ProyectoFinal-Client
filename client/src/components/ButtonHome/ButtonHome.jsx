@@ -17,8 +17,8 @@ const ButtonHome = () => {
         <Button
           style={{
             width: "150px",
-            backgroundColor: "#0fb66e",
-            color: "#000000",
+            backgroundColor: "#006064",
+            color: "#ffffff",
           }}
           onClick={handleClickLogIn}
         >
@@ -28,8 +28,8 @@ const ButtonHome = () => {
           onClick={handleRegister}
           style={{
             width: "150px",
-            backgroundColor: "#02a663",
-            color: "#000000",
+            backgroundColor: "#004D40",
+            color: "#ffffff",
           }}
         >
           Register
