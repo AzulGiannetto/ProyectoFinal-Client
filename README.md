@@ -22,4 +22,4 @@ En cuanto a la creación de la página esto se compone de un backend y un fronte
 
 ***Funcionalidades que añadiremos proximamente para una mayor comodidad de los usuarios***
 
-** MODIFICAR PERFIL**: Modificar los datos presentes. 
+**MODIFICAR PERFIL**: Modificar los datos presentes. 
