@@ -16,7 +16,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
-import PagesIcon from '@mui/icons-material/Pages';
+import PagesIcon from "@mui/icons-material/Pages";
 // const pages = ['Home','Posts', 'Blog', 'Perfil'];
 const pages = [
   {
@@ -30,8 +30,8 @@ const pages = [
     name: "Post Me",
     to: "/post",
   },
-  {name: "My Post",
-  to:"/myPost"}
+  { name: "My Post", to: "/myPost" },
+  // { name: "profile", to: "/profile" },
 ];
 // const settings = ["Profile", "Logout"];
 
@@ -71,8 +71,8 @@ const ResponsiveAppBar = () => {
   };
 
   const handleMyPost = () => {
-    navigate("/mypost")
-  }
+    navigate("/mypost");
+  };
 
   return (
     <AppBar style={{ backgroundColor: "#aecfa4" }}>
@@ -181,9 +181,7 @@ const ResponsiveAppBar = () => {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))} */}
-                <MenuItem>
-                  <PersonIcon fontSize="small" /> Profile
-                </MenuItem>
+
                 <MenuItem onClick={handleSession}>
                   <Logout fontSize="small" />
                   Logout
