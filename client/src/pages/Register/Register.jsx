@@ -9,9 +9,13 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [profileImg, setProfileImg] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const handleImage = (e) => {
+    setProfileImg(e.target.value);
+  };
   const handleFirstname = (e) => {
     setFirstname(e.target.value);
   };
@@ -28,11 +32,13 @@ const Register = () => {
   };
   const handleClickRegister = async (e) => {
     e.preventDefault();
-    await axios.post(`http://localhost:8080/auth/register`, {
+    await axios
+      .post(`http://localhost:8080/auth/register`, {
         firstname: firstname,
         username: username,
         email: email,
         password: password,
+        profilePhoto: profileImg,
       })
       .then((res) => {
         if (res.statusText === "Created") {
@@ -131,6 +137,25 @@ const Register = () => {
                 onChange={handlePassword}
                 id="filled-basic"
                 label="Password"
+                variant="filled"
+                fullWidth
+                style={{ marginBottom: "2em" }}
+                sx={{
+                  input: {
+                    backgroundColor: "#0C0C0C",
+                    color: "#0fb66e",
+                  },
+                  label: {
+                    color: "#02a663",
+                  },
+                }}
+              />
+            </Grid>
+            <Grid item xs={8}>
+              <TextField
+                onChange={handleImage}
+                id="filled-basic"
+                label="ImageUrl"
                 variant="filled"
                 fullWidth
                 style={{ marginBottom: "2em" }}

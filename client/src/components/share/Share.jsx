@@ -16,7 +16,8 @@ export default function Share() {
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [post, setPost] = useState([]);
-  const [user, setUser] = useState(window.localStorage.getItem("User"));
+  // profilePhoto
+
 
   const handleDescription = (e) => {
     setDescription(e.target.value);
@@ -32,7 +33,7 @@ export default function Share() {
     const dataPost = {
       imageUrl: imageUrl,
       description: description,
-      user: user,
+      user: JSON.parse(window.localStorage.getItem("User")),
     };
     axios
       .post(`http://localhost:8080/api/country/`, dataPost, {

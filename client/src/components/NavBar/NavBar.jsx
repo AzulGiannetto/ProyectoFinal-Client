@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
+import PagesIcon from '@mui/icons-material/Pages';
 // const pages = ['Home','Posts', 'Blog', 'Perfil'];
 const pages = [
   {
@@ -29,6 +30,8 @@ const pages = [
     name: "Post Me",
     to: "/post",
   },
+  {name: "My Post",
+  to:"/myPost"}
 ];
 // const settings = ["Profile", "Logout"];
 
@@ -66,6 +69,10 @@ const ResponsiveAppBar = () => {
     window.localStorage.removeItem("Email");
     navigate("/homepage");
   };
+
+  const handleMyPost = () => {
+    navigate("/mypost")
+  }
 
   return (
     <AppBar style={{ backgroundColor: "#aecfa4" }}>

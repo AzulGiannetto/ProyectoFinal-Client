@@ -11,6 +11,7 @@ import PostMe from "./pages/Post/PostMe";
 import ProtectedRoute from "./routes/PrivateRoutes";
 import { useEffect, useState } from "react";
 import Profile from "./pages/Profile/Profile";
+import MyPost from "./pages/MyPost/MyPost";
 function App() {
   const location = useLocation();
   const [isLogged, setIsLogged] = useState(
@@ -34,9 +35,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/homepage" element={<Homepage />} />
-        <Route path="profile" element={<Profile />} />
-        { 
-        /* <Route
+        {/* <Route path="profile" element={<Profile />} /> */}
+        {/* <Route
           path="/main"
           element={
             <ProtectedRoute isLogged={isLogged}>
@@ -57,6 +57,22 @@ function App() {
           element={
             <ProtectedRoute isLogged={isLogged}>
               <PostMe />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mypost"
+          element={
+            <ProtectedRoute isLogged={isLogged}>
+              <MyPost />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/mypost"
+          element={
+            <ProtectedRoute isLogged={isLogged}>
+              <MyPost />
             </ProtectedRoute>
           }
         />

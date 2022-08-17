@@ -8,6 +8,7 @@ import axios from "axios";
 const Login = () => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePhoto, setProfilePhoto] = useState("");
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
