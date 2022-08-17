@@ -30,6 +30,7 @@ const Login = () => {
         if (res.data.status === "OK") {
           localStorage.setItem("Token", JSON.stringify(res.data.token));
           localStorage.setItem("User", JSON.stringify(user));
+          localStorage.setItem("Id", JSON.stringify(res.data.id))
           navigate("/");
           setError(false);
         }

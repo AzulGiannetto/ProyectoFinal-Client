@@ -37,7 +37,6 @@ const Homepage = () => {
             <ButtonHome />
           </Grid>
       </Grid>
-      <Footer />
     </div>
   );
 };

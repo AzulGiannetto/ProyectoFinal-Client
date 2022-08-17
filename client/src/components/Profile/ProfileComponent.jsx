@@ -1,15 +1,12 @@
 import axios from "axios";
+import "../../pages/Profile/Profile.css"
 import { useEffect, useState } from "react";
-const ProfileComponent = ({ data }) => {
+const ProfileComponent = () => {
+  const [user, setUser] = useState({})
   useEffect(() => {
-    const profile = {
-      firstname: "",
-      username: JSON.parse(window.localStorage.getItem("User")),
-      description: "",
-      profilePhoto: "",
-    };
+    const userId = JSON.parse(window.localStorage.getItem("Id"))
     axios
-      .get(`http://localhost:8080/auth/register`, profile, {
+      .get(`http://localhost:8080/auth/${userId}`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(
             window.localStorage.getItem("Token")
@@ -17,7 +14,7 @@ const ProfileComponent = ({ data }) => {
         },
       })
       .then((res) => {
-        console.log(res.data);
+        setUser(res.data)
       })
       .catch((err) => console.error(err));
   });
@@ -32,12 +29,12 @@ const ProfileComponent = ({ data }) => {
                 // src={require("../../assets/fondo.jpg")}
                 alt=""
               />
-              <img className="profileUserImg" src={data.profilePhoto} alt="" />
+              <img className="profileUserImg" src={user.profilePhoto} alt={user.firstname} />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">{data.firstname}</h4>
-              <h4 className="profileInfoName">{data.username}</h4>
-              <span className="profileInfoDesc">{data.description}</span>
+              <h4 className="profileInfoName">{user.firstname}</h4>
+              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileInfoDesc">{user.description}</span>
             </div>
           </div>
           <div className="profileEditButton"></div>

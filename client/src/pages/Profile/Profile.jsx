@@ -4,11 +4,11 @@ import ProfileComponent from "../../components/Profile/ProfileComponent";
 // import axios from "axios"
 
 export default function Profile() {
-    const [data, setData] = useState("")
+    // const [data, setData] = useState("")
   return (
     <>
       <NavBar />
-      <ProfileComponent data={setData}/>
+      <ProfileComponent/>
     </>
   );
 }

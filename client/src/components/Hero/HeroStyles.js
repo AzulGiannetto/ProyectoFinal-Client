@@ -1,4 +1,4 @@
-import Image from "../../assets/image/auroraboreal.png";
+import Image from "../../assets/image/chiringa.jpg";
 
 const HeroStyles = {
   hero: {

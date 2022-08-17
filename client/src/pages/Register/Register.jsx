@@ -42,7 +42,7 @@ const Register = () => {
       })
       .then((res) => {
         if (res.statusText === "Created") {
-          navigate("/main");
+          navigate("/");
           setError(false);
         }
         console.log(res);

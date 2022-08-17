@@ -1,4 +1,5 @@
 import * as React from "react";
+import LocalAirportIcon from '@mui/icons-material/LocalAirport'
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -75,7 +76,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar style={{ backgroundColor: "#aecfa4" }}>
+    <AppBar style={{ backgroundColor: "#00796B" }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
@@ -83,11 +84,13 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: "none", md: "flex" },
               letterSpacing: ".3rem",
-              color: "#000000",
+              color: "#ffffff",
               textDecoration: "none",
+              m: "5px"
             }}
           >
-            LOGO
+            <LocalAirportIcon/>
+            Soulgram
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -138,7 +141,8 @@ const ResponsiveAppBar = () => {
               flexGrow: 1,
             }}
           >
-            LOGO
+            <LocalAirportIcon/>
+            ;
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -147,7 +151,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 component={NavLink}
                 to={page.to}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "#ffffff", display: "block" }}
               >
                 {page.name}
               </Button>
