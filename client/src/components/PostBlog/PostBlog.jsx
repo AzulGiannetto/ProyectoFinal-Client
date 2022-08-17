@@ -32,38 +32,41 @@ const Post = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  return posting.slice(0).reverse().map((poster) => (
-    <Card sx={{ margin: 15 }}>
-      <CardHeader
-        avatar={
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVert />
+  return posting
+    .slice(0)
+    .reverse()
+    .map((poster) => (
+      <Card sx={{ margin: 15 }}>
+        <CardHeader
+          avatar={
+            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVert />
+            </IconButton>
+          }
+          title={poster.user}
+          subheader="September 14, 2022"
+        />
+        <CardMedia
+          component="img"
+          height="20%"
+          image={poster.imageUrl}
+          alt={poster.imageUrl}
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {poster.description}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="share">
+            <Share />
           </IconButton>
-        }
-        title={poster.user}
-        subheader="September 14, 2022"
-      />
-      <CardMedia
-        component="img"
-        height="20%"
-        image={poster.imageUrl}
-        alt={poster.imageUrl}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {poster.description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="share">
-          <Share />
-        </IconButton>
-      </CardActions>
-    </Card>
-  ));
+        </CardActions>
+      </Card>
+    ));
 };
 
 export default Post;

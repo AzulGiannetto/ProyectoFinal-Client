@@ -19,17 +19,16 @@ const Main = () => {
           justifyContent: 'center',
         }}
         >
-          <Box sx= {{width: {xs:'100%', sm:'50%', md: '40%'}, padding: {xs:3, sm:2, md:20}}}>
+          <Box sx= {{width: {xs:'1000px', sm:'50%', md: '50%'}, padding: {xs:3, sm:3, md:20}}}>
 
-          <Box sx={{background: 'white', opacity:'0.7', fontFamily: 'Righteous'}}>
-            <Typography variant={'h4'} color= '#558b2f' align='center' pt={8}>
+          <Box sx={{background: 'transparent', fontFamily: 'Righteous', fontStyle:'bold'}}>
+            <Typography sx={{textShadow: "3px 0px 0px #1565C0"}}variant={'h3'} color= '#ffffff' align='center' pt={8}>
               VIAJAR POR PLACER
             </Typography>
-            <Typography variant= 'h5' align='center'>
-              Sin preocupaciones
+            <Typography sx={{textShadow: "3px 0px 0px #1565C0"}} color="#ffffff" variant= 'h5' align='center'>
+              Sin preocupaciones, vea aqui los mejores lugares del mundo compartido por nuestros usuarios
             </Typography>
             <Typography variant= 'body2' align='center' pb={8}>
-              Vea aqui los mejores lugares del mundo compartido por nuestros usuarios
             </Typography>
           </Box>
           </Box>

@@ -30,7 +30,7 @@ const Login = () => {
         if (res.data.status === "OK") {
           localStorage.setItem("Token", JSON.stringify(res.data.token));
           localStorage.setItem("User", JSON.stringify(user));
-          localStorage.setItem("Id", JSON.stringify(res.data.id))
+          localStorage.setItem("Id", JSON.stringify(res.data.id));
           navigate("/");
           setError(false);
         }
@@ -55,7 +55,7 @@ const Login = () => {
         justifyContent="center"
         style={{ minHeight: "97.5vh" }}
       >
-        <Typography align="center" variant="h3" sx={{ color: "#02a663" }}>
+        <Typography align="center" variant="h3" sx={{ color: "#00ACC1" }}>
           Login
         </Typography>
         <Grid item xs={3}>
@@ -69,11 +69,11 @@ const Login = () => {
             style={{ marginBottom: "2em" }}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#00ACC1",
               },
               label: {
-                color: "#02a663",
+                color: "#00ACC1",
               },
             }}
           />
@@ -89,11 +89,11 @@ const Login = () => {
             onChange={handlePassword}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#00ACC1",
               },
               label: {
-                color: "#02a663",
+                color: "#00ACC1",
               },
             }}
           />
@@ -101,7 +101,7 @@ const Login = () => {
         <Stack spacing={2}>
           <Button
             onClick={handleClickSingIn}
-            style={{ backgroundColor: "#0fb66e", color: "#000000" }}
+            style={{ backgroundColor: "#006064", color: "#ffffff" }}
           >
             Sign In
           </Button>
@@ -109,15 +109,14 @@ const Login = () => {
             onClick={handleClickSignUp}
             style={{
               width: "150px",
-              backgroundColor: "#02a663",
-              color: "#000000",
+              backgroundColor: "#004D40",
+              color: "#ffffff",
             }}
           >
             Sign Up
           </Button>
         </Stack>
       </Grid>
-      <Footer />
     </div>
   );
 };

@@ -69,7 +69,7 @@ const Register = () => {
             mt={"50px"}
             align="center"
             variant="h3"
-            sx={{ color: "#02a663" }}
+            sx={{ color: "#00ACC1" }}
           >
             Register
           </Typography>
@@ -84,11 +84,11 @@ const Register = () => {
                 style={{ marginBottom: "2em" }}
                 sx={{
                   input: {
-                    backgroundColor: "#0C0C0C",
-                    color: "#0fb66e",
+                    backgroundColor: "#232323",
+                    color: "#00ACC1",
                   },
                   label: {
-                    color: "#02a663",
+                    color: "#00ACC1",
                   },
                 }}
               />
@@ -103,11 +103,11 @@ const Register = () => {
                 style={{ marginBottom: "2em" }}
                 sx={{
                   input: {
-                    backgroundColor: "#0C0C0C",
-                    color: "#0fb66e",
+                    backgroundColor: "#232323",
+                    color: "##00ACC1",
                   },
                   label: {
-                    color: "#02a663",
+                    color: "#00ACC1",
                   },
                 }}
               />
@@ -122,11 +122,11 @@ const Register = () => {
                 style={{ marginBottom: "2em" }}
                 sx={{
                   input: {
-                    backgroundColor: "#0C0C0C",
-                    color: "#0fb66e",
+                    backgroundColor: "#232323",
+                    color: "#00ACC1",
                   },
                   label: {
-                    color: "#02a663",
+                    color: "#00ACC1",
                   },
                 }}
               />
@@ -142,11 +142,11 @@ const Register = () => {
                 style={{ marginBottom: "2em" }}
                 sx={{
                   input: {
-                    backgroundColor: "#0C0C0C",
-                    color: "#0fb66e",
+                    backgroundColor: "#232323",
+                    color: "#00ACC1",
                   },
                   label: {
-                    color: "#02a663",
+                    color: "#00ACC1",
                   },
                 }}
               />
@@ -161,11 +161,11 @@ const Register = () => {
                 style={{ marginBottom: "2em" }}
                 sx={{
                   input: {
-                    backgroundColor: "#0C0C0C",
-                    color: "#0fb66e",
+                    backgroundColor: "#232323",
+                    color: "#00ACC1",
                   },
                   label: {
-                    color: "#02a663",
+                    color: "#00ACC1",
                   },
                 }}
               />
@@ -176,8 +176,8 @@ const Register = () => {
               <Button
                 onClick={handleClickRegister}
                 style={{
-                  backgroundColor: "#0fb66e",
-                  color: "#000000",
+                  backgroundColor: "#006064",
+                  color: "#ffffff",
                   width: "150px",
                 }}
               >
@@ -187,7 +187,6 @@ const Register = () => {
           </Grid>
         </Box>
       </Grid>
-      <Footer />
     </div>
   );
 };

@@ -60,7 +60,7 @@ export default function Share() {
         justifyContent="center"
         style={{ minHeight: "97.5vh" }}
       >
-        <Typography align="center" variant="h3" sx={{ color: "#02a663" }}>
+        <Typography align="center" variant="h3" sx={{ color: "#00B8D4" }}>
           Post Me
         </Typography>
         <Grid item xs={3}>
@@ -74,13 +74,13 @@ export default function Share() {
             InputProps={{ sx: { height: 150 } }}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#0277BD",
                 height: 125,
               },
               label: {
                 height: "300px",
-                color: "#02a663",
+                color: "#0277BD",
               },
             }}
           />
@@ -94,11 +94,11 @@ export default function Share() {
             style={{ marginBottom: "2em" }}
             sx={{
               input: {
-                backgroundColor: "#0C0C0C",
-                color: "#0fb66e",
+                backgroundColor: "#232323",
+                color: "#0277BD",
               },
               label: {
-                color: "#02a663",
+                color: "#0277BD",
               },
             }}
           />
@@ -106,7 +106,7 @@ export default function Share() {
         <Stack spacing={2}>
           <Button
             onClick={handleClickPost}
-            style={{ backgroundColor: "#0fb66e", color: "#000000" }}
+            style={{ backgroundColor: "#0288D1", color: "#ffffff" }}
           >
             Share Post
           </Button>
