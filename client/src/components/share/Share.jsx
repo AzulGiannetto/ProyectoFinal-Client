@@ -1,5 +1,4 @@
 import "./share.css";
-import { PermMedia, Label, Room, EmojiEmotions } from "@mui/icons-material";
 import axios from "axios";
 import {
   Box,
@@ -18,7 +17,6 @@ export default function Share() {
   const [post, setPost] = useState([]);
   // profilePhoto
 
-
   const handleDescription = (e) => {
     setDescription(e.target.value);
   };
@@ -26,7 +24,6 @@ export default function Share() {
   const handleImageUrl = (e) => {
     setImageUrl(e.target.value);
   };
-
 
   const handleClickPost = (e) => {
     e.preventDefault();
@@ -44,7 +41,7 @@ export default function Share() {
         },
       })
       .then((res) => {
-        alert("ya subio el post")
+        alert("ya subio el post");
         console.log(res.data);
       })
       .catch((e) => console.log(e));

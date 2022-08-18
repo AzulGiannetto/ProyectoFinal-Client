@@ -1,59 +1,34 @@
 [{
   "_id": {
-    "$oid": "62f993638a1727c92e20ccc0"
-  },
-  "firstname": "Rodrigo",
-  "username": "Rodrigo23",
-  "password": "$2b$10$boTXYu3qCsQGhbUbMNK3heL76.WgtAF14FbmSS9xpbFYWQZFkn.vW",
-  "email": "rodri23@gmail.com",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "62faa0c1da1560a3b09ed841"
-  },
-  "firstname": "jean",
-  "username": "jeangoleiro",
-  "email": "goleiro1@gmail.com",
-  "password": "$2b$10$/vEZtksOZgcL5OJ4eQ2cDOZJiu45YI6HLF.GlDUEILm4RIuq4z7YW",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "62fd32c51ac2c4dc4a822d25"
-  },
-  "firstname": "Michael",
-  "username": "Jordan23",
-  "profilePhoto": "https://media.vogue.es/photos/5ea1dfcae7a75f000938445e/2:3/w_2560%2Cc_limit/GettyImages-52298709.jpg",
-  "email": "jordanel23@gmail.com",
-  "password": "$2b$10$w/w04E4DTXBj0Crpa5mwhebz3MHjHJoqRaFHxeGhrwMJUPduKoHia",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "62fd33c31ac2c4dc4a822d2f"
-  },
-  "firstname": "Fernando",
-  "username": "JFKing10",
-  "profilePhoto": "https://www.biografiasyvidas.com/biografia/j/fotos/jordan_michael_1.jpg",
-  "email": "JFQ@gmail.com",
-  "password": "$2b$10$Oe3FFsHlRCVSAw3ptq8CaOJ0aYf9/uiENNXWow/ec9fPoOffwqT2S",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "62fd5b08d89a55a716b41d21"
+    "$oid": "62fda0d0278842ad8392d51a"
   },
   "firstname": "Valeria",
-  "username": "valZacarias",
-  "profilePhoto": "https://www.unigreet.com/wp-content/uploads/2020/04/Sweet-girl-dp.jpg",
-  "email": "valzacarias@gmail.com",
-  "password": "$2b$10$l862Ydj5TeDYeysyp8zWF.WTCAOUUvj9DmyrcKKmPO6SIjKeTp9ti",
+  "username": "valeriazacarias",
+  "description": "HOLA!!",
+  "profilePhoto": "https://holatelcel.com/wp-content/uploads/2020/12/foto-perfil-whatsapp-.png",
+  "email": "valeria@gmail.com",
+  "password": "$2b$10$od3ne9dVZ5wNpi0LIasb3uetGmfZa9yQ.gIY39PFfT6Mzf/oMG.te",
   "__v": 0
 },{
   "_id": {
-    "$oid": "62fd5d48d89a55a716b41d35"
+    "$oid": "62fda1eb278842ad8392d529"
+  },
+  "firstname": "Azul",
+  "username": "azulgiannetto",
+  "description": "Hola! Soy Azul <3 ",
+  "profilePhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTel3km3NGjmrc1AHLfC3m7JLViMaISyeSOw&usqp=CAU",
+  "email": "azul@gmail.com",
+  "password": "$2b$10$F2V3FwhcXA41OIjUe2puIe1b71bvDb08eARU.W2jLa62f7JWPAR0G",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62fda2cd278842ad8392d536"
   },
   "firstname": "Pedro",
-  "username": "PedroBenitez",
-  "profilePhoto": "https://i0.wp.com/www.followchain.org/wp-content/uploads/2022/03/good-tiktok-profile-picture-15-1.jpg?resize=256%2C256&ssl=1",
-  "email": "pedrobenitez@gmail.com",
-  "password": "$2b$10$6Va/YRbNBSy59/DXM.QyfO.uVsPNgta/dYV0h7a3GMfqWupCLtReq",
+  "username": "pedrobenitez",
+  "description": "Mi nombre es Pedro",
+  "profilePhoto": "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
+  "email": "pedro@gmail.com",
+  "password": "$2b$10$OVWVPAieXvb1jnCNVWVPyu3a7ZhtY7ar.xCZW80dnP0Y7YkBSkqMu",
   "__v": 0
 }]
