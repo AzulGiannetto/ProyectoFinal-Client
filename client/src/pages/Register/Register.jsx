@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
 import { TextField, Grid, Typography, Button, Stack, Box } from "@mui/material";
-import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
@@ -10,6 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [profileImg, setProfileImg] = useState("");
+  const [description, setDescription] = useState("")
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -30,6 +30,10 @@ const Register = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  const handleDescription = (e) => {
+    setDescription(e.target.value);
+  }
   const handleClickRegister = async (e) => {
     e.preventDefault();
     await axios
@@ -65,8 +69,8 @@ const Register = () => {
       >
         <Box flexGrow={1}>
           <Typography
-            p={"50px"}
-            mt={"50px"}
+            p={"30px"}
+            mt={"30px"}
             align="center"
             variant="h3"
             sx={{ color: "#00ACC1" }}
@@ -77,6 +81,7 @@ const Register = () => {
             <Grid item xs={5}>
               <TextField
                 onChange={handleFirstname}
+                value={firstname}
                 id="filled-basic"
                 label="FirstName"
                 variant="filled"
@@ -96,6 +101,7 @@ const Register = () => {
             <Grid item xs={3}>
               <TextField
                 onChange={handleUsername}
+                value={username}
                 id="filled-basic"
                 label="username"
                 variant="filled"
@@ -104,7 +110,7 @@ const Register = () => {
                 sx={{
                   input: {
                     backgroundColor: "#232323",
-                    color: "##00ACC1",
+                    color: "#00ACC1",
                   },
                   label: {
                     color: "#00ACC1",
@@ -117,6 +123,7 @@ const Register = () => {
                 onChange={handleEmail}
                 id="filled-basic"
                 label="Email"
+                value={email}
                 variant="filled"
                 fullWidth
                 style={{ marginBottom: "2em" }}
@@ -134,6 +141,7 @@ const Register = () => {
             <Grid item xs={8}>
               <TextField
                 type="password"
+                value={password}
                 onChange={handlePassword}
                 id="filled-basic"
                 label="Password"
@@ -170,9 +178,29 @@ const Register = () => {
                 }}
               />
             </Grid>
+            <Grid item xs={8}>
+              <TextField
+                onChange={handleDescription}
+                value={description}
+                id="filled-basic"
+                label="description"
+                variant="filled"
+                fullWidth
+                style={{ marginBottom: "2em" }}
+                sx={{
+                  input: {
+                    backgroundColor: "#232323",
+                    color: "#00ACC1",
+                  },
+                  label: {
+                    color: "#00ACC1",
+                  },
+                }}
+              />
+            </Grid>
           </Grid>
           <Grid>
-            <Stack spacing={2} alignItems="center">
+            <Stack spacing={3} mb={2} alignItems="center">
               <Button
                 onClick={handleClickRegister}
                 style={{

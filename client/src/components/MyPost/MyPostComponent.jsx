@@ -32,36 +32,38 @@ const PostCard = ({ data, setGetAgain }) => {
   };
 
   return (
-    <Card sx={{ margin: 5 }}>
-      <CardHeader
-        avatar={
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVert />
+    <div>
+      <Card sx={{ margin: 15 }}>
+        <CardHeader
+          avatar={
+            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVert />
+            </IconButton>
+          }
+          title={data.user}
+          subheader="September 14, 2022"
+        />
+        <CardMedia
+          component="img"
+          height="20%"
+          image={data.imageUrl}
+          alt={data.imageUrl}
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {data.description}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton onClick={handleDelete} aria-label="share">
+            <DeleteIcon />
           </IconButton>
-        }
-        title={data.user}
-        subheader="September 14, 2022"
-      />
-      <CardMedia
-        component="img"
-        height="20%"
-        image={data.imageUrl}
-        alt={data.imageUrl}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {data.description}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton onClick={handleDelete} aria-label="share">
-          <DeleteIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+        </CardActions>
+      </Card>
+    </div>
   );
 };
 
