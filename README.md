@@ -19,6 +19,7 @@ En cuanto a la creación de la página esto se compone de un backend y un fronte
 * En el frontend o client se utilizo: Axios, React, React Router Dom y Material UI 
 
 *Te mostramos el recorrido que podes realizar al ser usuario de nuestra página*
+
 Esta es la página de inicio para iniciar sesión
 ![inicio](https://user-images.githubusercontent.com/104934886/185274958-f4d008af-0b58-41c3-8e61-b33d22274a6c.jpg)
 
