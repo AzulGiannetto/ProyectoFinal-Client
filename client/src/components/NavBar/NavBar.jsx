@@ -32,6 +32,7 @@ const pages = [
     to: "/post",
   },
   { name: "My Post", to: "/myPost" },
+  {name:"Profile", to:"/Profile"}
   // { name: "profile", to: "/profile" },
 ];
 // const settings = ["Profile", "Logout"];

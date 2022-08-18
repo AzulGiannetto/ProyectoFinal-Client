@@ -1,5 +1,6 @@
 .profile{
     display: flex;
+    min-height: 95vh; 
 }
 
 .profileRight{
@@ -38,10 +39,12 @@
 }
 
 .profileInfoName{
+    color: #00ACC1;
     font-size: 24px;
 }
 
 .profileInfoDesc{
+    color: #00ACC1;
     font-weight: 300;
 }
 

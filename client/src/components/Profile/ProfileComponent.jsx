@@ -26,7 +26,7 @@ const ProfileComponent = () => {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                // src={require("../../assets/fondo.jpg")}
+                src={require("../../assets/image/fondo.jpg")}
                 alt=""
               />
               <img className="profileUserImg" src={user.profilePhoto} alt={user.firstname} />
