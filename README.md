@@ -18,6 +18,25 @@ En cuanto a la creación de la página esto se compone de un backend y un fronte
 
 * En el frontend o client se utilizo: Axios, React, React Router Dom y Material UI 
 
+*Te mostramos el recorrido que podes realizar al ser usuario de nuestra página*
+Esta es la página de inicio para iniciar sesión
+![inicio](https://user-images.githubusercontent.com/104934886/185274958-f4d008af-0b58-41c3-8e61-b33d22274a6c.jpg)
+
+Esta es nuestra HomePage
+![home](https://user-images.githubusercontent.com/104934886/185274836-8e6b4aea-6654-41e0-ac30-41dd790b8f7a.jpg)
+
+Login
+![login](https://user-images.githubusercontent.com/104934886/185274999-f3a53f47-5459-47e3-9841-299a56218435.jpg)
+
+Register
+![register](https://user-images.githubusercontent.com/104934886/185275034-5dc8f3af-9f7b-41ff-8560-23f4e588d6f2.jpg)
+
+Postear
+![postear](https://user-images.githubusercontent.com/104934886/185275103-d77b9141-85a4-423e-b71a-73c015718236.jpg)
+
+Los posteos, tanto tuyos como de otros usuarios
+![post](https://user-images.githubusercontent.com/104934886/185275154-c2d06137-cdcf-4705-93eb-de3f39de1d9b.jpg)
+
 ***
 
 ***Funcionalidades que añadiremos proximamente para una mayor comodidad de los usuarios***
