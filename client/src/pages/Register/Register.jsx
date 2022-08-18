@@ -40,6 +40,7 @@ const Register = () => {
       .post(`http://localhost:8080/auth/register`, {
         firstname: firstname,
         username: username,
+        description: description,
         email: email,
         password: password,
         profilePhoto: profileImg,
